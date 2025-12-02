@@ -10,6 +10,15 @@ function List(props) {
   useEffect(()=>{
     setCount(count+1);
   },[col]);
+
+  useEffect(()=>{
+    const fetchDAta=async ()=>{
+      const response=await fetch('https://jsonplaceholder.typicode.com/posts');
+      const jsonData=await response.json();
+      console.log(jsonData[0]['userId']);
+    }
+    fetchDAta();
+  },[col]);
   return (
     <div>
       <h1>Test Component</h1>
