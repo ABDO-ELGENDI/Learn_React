@@ -8,6 +8,8 @@ import List from './components/List'
 import Card from './components/Card'
 import CardNameCom from './components/CardNameCom'
 import CardNested from './components/CardNested'
+import ItemCard from './components/ItemCard'
+import ItemCardPro from './components/ItemCardPro'
 
 
 
@@ -31,6 +33,8 @@ function App() {
           <Route path='nestedcard' element={<CardNested/>}/>{/*nested route doesn't have close tag as it ended with /> */}
        </Route>
        <Route path='/card/:cardname' element={<CardNameCom/>}></Route>{/*useparameters in url */}
+       <Route path='/carditem' element={<ItemCard/>}></Route>
+       <Route path='/carditempro' element={<ItemCardPro/>}></Route>
     </Routes>
     </BrowserRouter>
     </div>
