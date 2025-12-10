@@ -10,7 +10,7 @@ import CardNameCom from './components/CardNameCom'
 import CardNested from './components/CardNested'
 import ItemCard from './components/ItemCard'
 import ItemCardPro from './components/ItemCardPro'
-
+import CItemCardPro from './components/CItemCardPro'
 
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
        <Route path='/card/:cardname' element={<CardNameCom/>}></Route>{/*useparameters in url */}
        <Route path='/carditem' element={<ItemCard/>}></Route>
        <Route path='/carditempro' element={<ItemCardPro/>}></Route>
+       <Route path='/clcarditempro' element={<CItemCardPro tit="Hello"/>}></Route>
     </Routes>
     </BrowserRouter>
     </div>

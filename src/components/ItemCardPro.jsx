@@ -22,7 +22,7 @@ function ItemCardPro() {
         <div className="row">
         {
             data.map((item) => (
-                <div>
+                <div key={item?._id}>
                     <div className="col s12 m6">
                         <div className="card">
                             <div className="card-image">

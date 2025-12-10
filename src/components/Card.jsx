@@ -2,12 +2,13 @@ import { useState } from 'react'
 import '../materialize.min.css'
 import { Outlet } from 'react-router-dom'
 
-function Card() {
+function Card(props) {
   return (
     <div>
       <div className="row">
           <div className="col s12 m6">
               <div className="card">
+                <p>{props.try.toUpperCase()}</p>
                   <div className="card-image">
                       <img src="../../public/sample-1.jpg"/>{/*image here has a close /> */}
                           <span className="card-title">Title</span>
