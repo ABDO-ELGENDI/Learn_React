@@ -1,10 +1,21 @@
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'//files in public are accessed directly
-import { useState } from 'react'
+import { useState ,useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
+import ThemeContext from '../contexts/ThemeContext'
 
 function OldApp() {
     const [count, setCount] = useState(0)
+
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    const conStyle = {
+    background: theme === 'dark' ? '#333' : '#FFF',
+    color: theme === 'dark' ? '#FFF' : '#333',
+    padding: '10px 20px',
+    border: '1px solid #ccc',
+    cursor: 'pointer'
+  };
+
 
     const navigate = useNavigate();//can't use useNavigate unless inside component that can reached by Route tag
     function navToCard() {
@@ -16,7 +27,7 @@ function OldApp() {
     }
 
     return (
-        <>
+        <div style={conStyle}>
             <button onClick={back}>Back</button>
             <button onClick={navToCard}>Navgate to CardNested</button>
             <div>
@@ -39,7 +50,10 @@ function OldApp() {
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
             </p>
-        </>
+            <button className="waves-effect waves-light btn"  onClick={toggleTheme}>
+                Toggle Theme (Currently {theme})
+            </button>
+        </div>
     )
 }
 
